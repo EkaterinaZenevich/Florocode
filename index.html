@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Флорокод</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <aside class="sidebar">
+      <div class="brand">
+        <span class="brand-mark">F</span>
+        <div>
+          <h1>Флорокод</h1>
+          <p>Женская проза XIX века</p>
+        </div>
+      </div>
+
+      <label class="field">
+        <span>Произведение</span>
+        <select id="workSelect"></select>
+      </label>
+
+      <label class="field">
+        <span>Поиск</span>
+        <input id="searchInput" type="search" placeholder="фуксия, роза, письмо...">
+      </label>
+
+      <label class="field">
+        <span>Флороним</span>
+        <select id="lemmaSelect"></select>
+      </label>
+
+      <div class="stats" id="stats"></div>
+    </aside>
+
+    <main class="workspace">
+      <section class="summary">
+        <div>
+          <p class="kicker">Корпусный анализ</p>
+          <h2 id="workTitle"></h2>
+          <p id="workMeta"></p>
+        </div>
+        <div class="summary-actions">
+          <button id="resetButton" type="button">Сбросить</button>
+        </div>
+      </section>
+
+      <section class="panel">
+        <div class="panel-head">
+          <h3>Карта флоронимов</h3>
+          <p>Частотность внутри выбранного произведения</p>
+        </div>
+        <div class="chips" id="lemmaChips"></div>
+      </section>
+
+      <section class="content-grid">
+        <article class="panel note-panel">
+          <div class="panel-head">
+            <h3 id="noteTitle">Интерпретация</h3>
+            <p id="noteSubtitle"></p>
+          </div>
+          <p id="noteText"></p>
+        </article>
+
+        <article class="panel">
+          <div class="panel-head">
+            <h3>Контексты</h3>
+            <p id="resultCount"></p>
+          </div>
+          <div class="results" id="results"></div>
+        </article>
+      </section>
+    </main>
+
+    <script src="data.js"></script>
+    <script src="meanings.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
